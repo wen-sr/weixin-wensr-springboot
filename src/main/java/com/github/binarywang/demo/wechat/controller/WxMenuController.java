@@ -8,6 +8,7 @@ import me.chanjar.weixin.mp.api.WxMpMenuService;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.menu.WxMpGetSelfMenuInfoResult;
 import me.chanjar.weixin.mp.bean.menu.WxMpMenu;
+import org.apache.tomcat.util.bcel.Const;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,10 +47,110 @@ public class WxMenuController implements WxMpMenuService {
     @GetMapping("/create")
     public String menuCreateSample() throws WxErrorException {
         WxMenu menu = new WxMenu();
-        WxMenuButton button1 = new WxMenuButton();
-        button1.setType(WxConsts.BUTTON_CLICK);
-        button1.setName("今日歌曲");
-        button1.setKey("V1001_TODAY_MUSIC");
+
+        WxMenuButton menuButton1 = new WxMenuButton();
+        menuButton1.setName("业务查询");
+        WxMenuButton xhsf = new WxMenuButton();
+        xhsf.setName("新华物流收发货查询");
+        xhsf.setType(WxConsts.BUTTON_VIEW);
+        xhsf.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
+
+        WxMenuButton xhsf1 = new WxMenuButton();
+        xhsf1.setName("新华物流收发货查询");
+        xhsf1.setType(WxConsts.BUTTON_VIEW);
+        xhsf1.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
+
+        WxMenuButton xhsf2 = new WxMenuButton();
+        xhsf2.setName("新华物流收发货查询");
+        xhsf2.setType(WxConsts.BUTTON_VIEW);
+        xhsf2.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
+
+        WxMenuButton xhsf3 = new WxMenuButton();
+        xhsf3.setName("新华物流收发货查询");
+        xhsf3.setType(WxConsts.BUTTON_VIEW);
+        xhsf3.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
+
+        WxMenuButton xhsf4 = new WxMenuButton();
+        xhsf4.setName("新华物流收发货查询");
+        xhsf4.setType(WxConsts.BUTTON_VIEW);
+        xhsf4.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
+
+        menuButton1.getSubButtons().add(xhsf);
+        menuButton1.getSubButtons().add(xhsf1);
+        menuButton1.getSubButtons().add(xhsf2);
+        menuButton1.getSubButtons().add(xhsf3);
+        menuButton1.getSubButtons().add(xhsf4);
+
+        WxMenuButton menuButton2 = new WxMenuButton();
+        menuButton2.setName("业务办理");
+        WxMenuButton yw = new WxMenuButton();
+        yw.setName("业务办理");
+        yw.setType(WxConsts.BUTTON_CLICK);
+        yw.setKey("yw");
+
+        //WxMenuButton yw4 = new WxMenuButton();
+        //yw4.setName("位置");
+        //yw4.setType(WxConsts.BUTTON_LOCATION_SELECT);
+        //yw4.setKey("yw4");
+
+        //WxMenuButton yw1 = new WxMenuButton();
+        //yw1.setName("小程序");
+        //yw1.setType(WxConsts.BUTTON_MINIPROGRAM);
+        //yw1.setKey("yw1");
+
+        //WxMenuButton yw2 = new WxMenuButton();
+        //yw2.setName("图片");
+        //yw2.setType(WxConsts.BUTTON_PIC_WEIXIN);
+        //yw2.setKey("yw2");
+
+        //WxMenuButton yw3 = new WxMenuButton();
+        //yw3.setName("Media_id");
+        //yw3.setType(WxConsts.BUTTON_MEDIA_ID);
+        //yw3.setKey("yw3");
+        menuButton2.getSubButtons().add(yw);
+        //menuButton2.getSubButtons().add(yw1);
+        //menuButton2.getSubButtons().add(yw2);
+        //menuButton2.getSubButtons().add(yw3);
+        //menuButton2.getSubButtons().add(yw4);
+
+        WxMenuButton menuButton3 = new WxMenuButton();
+        menuButton3.setName("联系我们");
+
+        WxMenuButton lx = new WxMenuButton();
+        lx.setName("关于新华物流");
+        lx.setType(WxConsts.BUTTON_VIEW);
+        lx.setUrl("http://www.jx56.com/jxxhwl/index.html");
+
+        WxMenuButton lx2 = new WxMenuButton();
+        lx2.setName("关于蓝海物流");
+        lx2.setType(WxConsts.BUTTON_VIEW);
+        lx2.setUrl("http://www.jx56.com/jxxhwl/index.html");
+
+        WxMenuButton lx3 = new WxMenuButton();
+        lx3.setName("联系客服");
+        lx3.setType(WxConsts.BUTTON_CLICK);
+        lx3.setKey("lx3");
+
+        WxMenuButton lx1 = new WxMenuButton();
+        lx1.setName("工号版定");
+        lx1.setType(WxConsts.BUTTON_CLICK);
+        lx1.setKey("lx1");
+
+        WxMenuButton lx4 = new WxMenuButton();
+        lx4.setName("意见反馈");
+        lx4.setType(WxConsts.BUTTON_VIEW);
+        lx4.setUrl("http://www.jx56.com/jxxhwl/wx/advice.action");
+
+        menuButton3.getSubButtons().add(lx);
+        menuButton3.getSubButtons().add(lx1);
+        menuButton3.getSubButtons().add(lx2);
+        menuButton3.getSubButtons().add(lx3);
+        menuButton3.getSubButtons().add(lx4);
+
+        //WxMenuButton button1 = new WxMenuButton();
+        //button1.setType(WxConsts.BUTTON_CLICK);
+        //button1.setName("今日歌曲");
+        //button1.setKey("V1001_TODAY_MUSIC");
 
 //        WxMenuButton button2 = new WxMenuButton();
 //        button2.setType(WxConsts.BUTTON_MINIPROGRAM);
@@ -58,31 +159,9 @@ public class WxMenuController implements WxMpMenuService {
 //        button2.setPagePath("pages/lunar/index.html");
 //        button2.setUrl("http://mp.weixin.qq.com");
 
-        WxMenuButton button3 = new WxMenuButton();
-        button3.setName("菜单");
-
-        menu.getButtons().add(button1);
-//        menu.getButtons().add(button2);
-        menu.getButtons().add(button3);
-
-        WxMenuButton button31 = new WxMenuButton();
-        button31.setType(WxConsts.BUTTON_VIEW);
-        button31.setName("搜索");
-        button31.setUrl("http://www.soso.com/");
-
-        WxMenuButton button32 = new WxMenuButton();
-        button32.setType(WxConsts.BUTTON_VIEW);
-        button32.setName("视频");
-        button32.setUrl("http://v.qq.com/");
-
-        WxMenuButton button33 = new WxMenuButton();
-        button33.setType(WxConsts.BUTTON_CLICK);
-        button33.setName("赞一下我们");
-        button33.setKey("V1001_GOOD");
-
-        button3.getSubButtons().add(button31);
-        button3.getSubButtons().add(button32);
-        button3.getSubButtons().add(button33);
+        menu.getButtons().add(menuButton1);
+        menu.getButtons().add(menuButton2);
+        menu.getButtons().add(menuButton3);
 
         return this.wxService.getMenuService().menuCreate(menu);
     }

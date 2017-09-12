@@ -2,6 +2,7 @@ package com.github.binarywang.demo.wechat.controller;
 
 import me.chanjar.weixin.mp.api.WxMpMessageRouter;
 import me.chanjar.weixin.mp.api.WxMpService;
+import me.chanjar.weixin.mp.bean.material.WxMpMaterialNews;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import org.apache.commons.lang3.StringUtils;
@@ -43,7 +44,6 @@ public class WechatController {
         if (this.wxService.checkSignature(timestamp, nonce, signature)) {
             return echostr;
         }
-
         return "非法请求";
     }
 
