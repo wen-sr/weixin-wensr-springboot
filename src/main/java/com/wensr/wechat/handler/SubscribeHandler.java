@@ -1,14 +1,20 @@
 package com.wensr.wechat.handler;
 
 import com.wensr.wechat.builder.TextBuilder;
+import com.wensr.wechat.dao.WechatUserInfoDao;
+import com.wensr.wechat.pojo.WeChatUserInfo;
+import com.wensr.wechat.utils.DateTimeUtil;
 import me.chanjar.weixin.common.exception.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlMessage;
 import me.chanjar.weixin.mp.bean.message.WxMpXmlOutMessage;
 import me.chanjar.weixin.mp.bean.result.WxMpUser;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -16,6 +22,9 @@ import java.util.Map;
  */
 @Component
 public class SubscribeHandler extends AbstractHandler {
+
+    @Autowired
+    WechatUserInfoDao wechatUserInfoDao;
 
     @Override
     public WxMpXmlOutMessage handle(WxMpXmlMessage wxMessage,
@@ -30,8 +39,19 @@ public class SubscribeHandler extends AbstractHandler {
 
         if (userWxInfo != null) {
             // TODO 可以添加关注用户到本地
+            WeChatUserInfo userInfo = wechatUserInfoDao.findByOpenId(userWxInfo.getOpenId());
+            if(userInfo != null) {
+                logger.info(userInfo.toString());
+                logger.info("该用户已经关注过");
+            }else{
+                userInfo = new WeChatUserInfo();
+                BeanUtils.copyProperties(userWxInfo, userInfo);
+                logger.info(userWxInfo.toString());
+                logger.info(userInfo.toString());
+                userInfo.setSubscribeTime(new Date());
+                wechatUserInfoDao.save(userInfo);
+            }
 
-            logger.info("得到用户的信息：" + userWxInfo.toString());
         }
 
         WxMpXmlOutMessage responseResult = null;

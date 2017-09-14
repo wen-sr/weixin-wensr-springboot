@@ -28,9 +28,10 @@ public class TestKefuMessage {
         WxMpKefuMessage message = new WxMpKefuMessage();
 
         //文本消息
-        message.setContent("这是客服消息!!!!!!!!!");
+        message.setContent("Hello,收到的是帅哥美女!!!!!!!!!");
         message.setMsgType(WxConsts.XML_MSG_TEXT);
         message.setToUser("oQwDMwFq_l2XkR2SbqK-G6Lapd8U");
+        message.setToUser("oQwDMwD3s1XP2zgskzP2ZfsREuZQ");
 
 
         try {
