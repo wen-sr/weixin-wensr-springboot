@@ -1,4 +1,4 @@
-package com.github.binarywang.demo.wechat.controller;
+package com.wensr.wechat.controller;
 
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.bean.menu.WxMenu;
@@ -56,30 +56,30 @@ public class WxMenuController implements WxMpMenuService {
         xhsf.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
 
         WxMenuButton xhsf1 = new WxMenuButton();
-        xhsf1.setName("新华物流收发货查询");
+        xhsf1.setName("危化品运输");
         xhsf1.setType(WxConsts.BUTTON_VIEW);
         xhsf1.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
 
         WxMenuButton xhsf2 = new WxMenuButton();
-        xhsf2.setName("新华物流收发货查询");
+        xhsf2.setName("新华快运");
         xhsf2.setType(WxConsts.BUTTON_VIEW);
         xhsf2.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
 
-        WxMenuButton xhsf3 = new WxMenuButton();
-        xhsf3.setName("新华物流收发货查询");
-        xhsf3.setType(WxConsts.BUTTON_VIEW);
-        xhsf3.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
-
-        WxMenuButton xhsf4 = new WxMenuButton();
-        xhsf4.setName("新华物流收发货查询");
-        xhsf4.setType(WxConsts.BUTTON_VIEW);
-        xhsf4.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
+        //WxMenuButton xhsf3 = new WxMenuButton();
+        //xhsf3.setName("新华物流收发货查询");
+        //xhsf3.setType(WxConsts.BUTTON_VIEW);
+        //xhsf3.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
+        //
+        //WxMenuButton xhsf4 = new WxMenuButton();
+        //xhsf4.setName("新华物流收发货查询");
+        //xhsf4.setType(WxConsts.BUTTON_VIEW);
+        //xhsf4.setUrl("http://www.jx56.com/jxxhwl/wx/shoufa.action");
 
         menuButton1.getSubButtons().add(xhsf);
         menuButton1.getSubButtons().add(xhsf1);
         menuButton1.getSubButtons().add(xhsf2);
-        menuButton1.getSubButtons().add(xhsf3);
-        menuButton1.getSubButtons().add(xhsf4);
+        //menuButton1.getSubButtons().add(xhsf3);
+        //menuButton1.getSubButtons().add(xhsf4);
 
         WxMenuButton menuButton2 = new WxMenuButton();
         menuButton2.setName("业务办理");

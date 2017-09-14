@@ -1,7 +1,6 @@
-package com.github.binarywang.demo.wechat.handler;
+package com.wensr.wechat.handler;
 
-import com.github.binarywang.demo.wechat.builder.TextBuilder;
-import com.github.binarywang.demo.wechat.utils.JsonUtils;
+import com.wensr.wechat.builder.TextBuilder;
 import me.chanjar.weixin.common.api.WxConsts;
 import me.chanjar.weixin.common.exception.WxErrorException;
 import me.chanjar.weixin.common.session.WxSessionManager;

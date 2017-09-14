@@ -1,4 +1,4 @@
-package com.github.binarywang.demo.wechat.handler;
+package com.wensr.wechat.handler;
 
 import me.chanjar.weixin.common.session.WxSessionManager;
 import me.chanjar.weixin.mp.api.WxMpService;
